@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        KUAISHOUMOV: ${{ secrets.1 }}
+        KUAISHOUMV: ${{ secrets.KUAISHOUMV }}
         TZ: Asia/shanghai
     steps:
       - name: Checkout
@@ -28,7 +28,7 @@ jobs:
           cd ~/Scripts
           npm install
       - name: '运行 【快手视频】'
-        if: env.KUAISHOUMOV
+        if: env.KUAISHOUMV
         run: |
           cd ~/Scripts
           node Task/Auto_Kuaishou.js
