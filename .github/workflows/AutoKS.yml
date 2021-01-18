@@ -18,19 +18,19 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/moranxichen/Auto.git ~/Auto
+          git clone https://github.com/moranxichen/Scripts.git ~/Scripts
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: npm install
         run: |
-          cd ~/Auto
+          cd ~/Scripts
           npm install
       - name: '运行 【快手视频】'
         if: env.KUAISHOUMV
         run: |
-          cd ~/Auto
+          cd ~/Scripts
           node Task/Auto_Kuaishou.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
